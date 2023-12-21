@@ -16,13 +16,15 @@ cat << EOF
 
            Welcome to the
 
-    ##   ##   ## ##   ### ##   ### ###           #### ##  ###  ##    ##     ###  ##           ### ##   ### ###   ## ##    ## ##   ### ###  ### ###  ### ##   ##  ##   
- ## ##   ##   ##   ##  ##   ##  ##           # ## ##   ##  ##     ##      ## ##            ##  ##   ##  ##  ##   ##  ##   ##   ##  ##   ##  ##   ##  ##  ##  ##   
-# ### #  ##   ##   ##  ##   ##                 ##      ##  ##   ## ##    # ## #            ##  ##   ##      ##       ##   ##   ##  ##   ##       ##  ##  ##  ##   
-## # ##  ##   ##   ## ##    ## ##              ##      ## ###   ##  ##   ## ##             ## ##    ## ##   ##       ##   ##   ##  ##   ## ##    ## ##    ## ##   
-##   ##  ##   ##   ## ##    ##                 ##      ##  ##   ## ###   ##  ##            ## ##    ##      ##       ##   ##   ### ##   ##       ## ##     ##     
-##   ##  ##   ##   ##  ##   ##  ##             ##      ##  ##   ##  ##   ##  ##            ##  ##   ##  ##  ##   ##  ##   ##    ###     ##  ##   ##  ##    ##     
-##   ##   ## ##   #### ##  ### ###            ####    ###  ##  ###  ##  ###  ##           #### ##  ### ###   ## ##    ## ##      ##    ### ###  #### ##    ##     
+
+                    d88d888b88   
+888b         d888       88       888"8b8b88"  
+88`8b       d8'88       88       88      ,8P  
+88 `8b     d8' 88       88       88aaaaaa8P'  
+88  `8b   d8'  88       88       88""""88'    
+88   `8b d8'   88       88       88    `8b    
+88    `888'    88       88       88     `8b   
+88     `8'     88       88       88      `8b  
                                                                                                                                                                   
      
                       build script
@@ -153,10 +155,10 @@ find rootfs/lib/modules/* -type f -name "*.ko" -exec strip -v --strip-unneeded {
 depmod -b rootfs $(ls rootfs/lib/modules)
 
 # Echo TUI configurations
-echo 'palen1x' > rootfs/etc/hostname
+echo 'MTR' > rootfs/etc/hostname
 echo "PATH=$PATH:$HOME/.local/bin" > rootfs/root/.bashrc # d
-echo "export PALEN1X_VERSION='$VERSION'" > rootfs/root/.bashrc
-echo '/usr/bin/palen1x_menu' >> rootfs/root/.bashrc
+echo "export MTR_VERSION='$VERSION'" > rootfs/root/.bashrc
+echo '/usr/bin/mtr_menu' >> rootfs/root/.bashrc
 echo "Rootless" > rootfs/usr/bin/.jbtype
 echo "" > rootfs/usr/bin/.args
 
