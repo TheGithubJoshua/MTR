@@ -8,26 +8,13 @@
     echo 'Please run as root'
     exit 1
 }
-
 GREEN="$(tput setaf 2)"
 BLUE="$(tput setaf 6)"
 NORMAL="$(tput sgr0)"
 cat << EOF
 
-           Welcome to the
-
-
-                    d88d888b88   
-888b         d888       88       888"8b8b88"  
-88`8b       d8'88       88       88      ,8P  
-88 `8b     d8' 88       88       88aaaaaa8P'  
-88  `8b   d8'  88       88       88""""88'    
-88   `8b d8'   88       88       88    `8b    
-88    `888'    88       88       88     `8b   
-88     `8'     88       88       88      `8b  
-                                                                                                                                                                  
-     
-                      build script
+Welcome to the MTR build script.
+                                            
         
 EOF
 # Ask for the version and architecture if variables are empty
@@ -74,7 +61,7 @@ if [ "$1" = "RELEASE" ]; then
             ;;
     esac
     echo "INFO: RELEASE CHOSEN"
-elif [ "$1" = "NIGHTLY" ]; then
+elif [ 1 = 1 ]; then
 
 
     url="https://cdn.nickchan.lol/palera1n/artifacts/c-rewrite/main/"

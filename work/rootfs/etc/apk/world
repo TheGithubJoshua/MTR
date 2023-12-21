@@ -1,0 +1,15 @@
+alpine-base
+alpine-baselayout
+alpine-keys
+apk-tools
+bash
+busybox
+libc-utils
+linux-firmware-none
+linux-lts
+ncurses
+newt
+openssh-client
+sshpass
+udev
+usbmuxd
