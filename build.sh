@@ -1,8 +1,7 @@
 #!/bin/bash
 #
-# palen1x build script
-# Made with <3 https://github.com/palera1n/palen1x
-# Modified from https://github.com/asineth0/checkn1x & https://github.com/raspberryenvoie/odysseyn1x :3
+# MTR build script
+# With thanks to the palera1n team.
 
 # Exit if user isn't root
 [ "$(id -u)" -ne 0 ] && {
