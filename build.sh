@@ -118,6 +118,11 @@ apk update
 apk upgrade
 apk add bash alpine-base usbmuxd ncurses udev openssh-client sshpass newt
 apk add --no-scripts linux-lts linux-firmware-none
+wget http://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/cfdisk-2.38.1-r8.apk
+apk add --allow-untrusted cfdisk-2.38.1-r8.apk
+apk add lsblk
+apk add nano
+apk add nano
 rc-update add bootmisc
 rc-update add hwdrivers
 rc-update add udev

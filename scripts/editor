@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Prompt user for the filename
+read -p "Enter the name of the file you would like to create: " filename
+
+# Save the filename to a variable in .bashrc
+echo "export CREATE_FILE_NAME=$filename" >> ~/.bashrc
+
+nano

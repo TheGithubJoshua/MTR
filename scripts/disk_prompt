@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Prompt user for disk to partition
+read -p "Enter the disk to partition (e.g., /dev/sdX): " disk
+
+# Save the disk value to a variable in .bashrc
+echo "export PARTITION_DISK=$disk" >> ~/.bashrc
+
+# Continue to next step
+/usr/bin/diskpart
