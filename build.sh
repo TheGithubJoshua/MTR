@@ -15,16 +15,18 @@ BLUE="$(tput setaf 6)"
 NORMAL="$(tput sgr0)"
 cat << EOF
 
-           Welcome to                 ${GREEN}&&&%##%%(${NORMAL}
-                               ${GREEN}&&&&&&&&&&&%#&&%%%${NORMAL}
-                        ${GREEN}&&&&&&&&&&&&&&&&&&%%#&&&%%%${NORMAL}
-                ${BLUE}&&&&&&&&${NORMAL}#############${GREEN}&&&%%&%%&&&&%%%${NORMAL}
-         ${BLUE}%%%%%%%%%%%%&&&${NORMAL}#  ${BLUE}palen1x${NORMAL}  #${GREEN}%&&&&%%%%%%%%%%%%${NORMAL}
-     ${BLUE}#######((((###%%%%%${NORMAL}#############${GREEN}&%%%%%%%${NORMAL}
-     ${BLUE}######/     ########%%%%&&&&&&&%%${NORMAL}
-      ${BLUE}((((((((((((######%%%%%%%${NORMAL}
-       ${BLUE}(((((((((#####%%*${NORMAL}
-        ${BLUE}/(((((##${NORMAL}                  build script
+           Welcome to the
+
+    ##   ##   ## ##   ### ##   ### ###           #### ##  ###  ##    ##     ###  ##           ### ##   ### ###   ## ##    ## ##   ### ###  ### ###  ### ##   ##  ##   
+ ## ##   ##   ##   ##  ##   ##  ##           # ## ##   ##  ##     ##      ## ##            ##  ##   ##  ##  ##   ##  ##   ##   ##  ##   ##  ##   ##  ##  ##  ##   
+# ### #  ##   ##   ##  ##   ##                 ##      ##  ##   ## ##    # ## #            ##  ##   ##      ##       ##   ##   ##  ##   ##       ##  ##  ##  ##   
+## # ##  ##   ##   ## ##    ## ##              ##      ## ###   ##  ##   ## ##             ## ##    ## ##   ##       ##   ##   ##  ##   ## ##    ## ##    ## ##   
+##   ##  ##   ##   ## ##    ##                 ##      ##  ##   ## ###   ##  ##            ## ##    ##      ##       ##   ##   ### ##   ##       ## ##     ##     
+##   ##  ##   ##   ##  ##   ##  ##             ##      ##  ##   ##  ##   ##  ##            ##  ##   ##  ##  ##   ##  ##   ##    ###     ##  ##   ##  ##    ##     
+##   ##   ## ##   #### ##  ### ###            ####    ###  ##  ###  ##  ###  ##           #### ##  ### ###   ## ##    ## ##      ##    ### ###  #### ##    ##     
+                                                                                                                                                                  
+     
+                      build script
         
 EOF
 # Ask for the version and architecture if variables are empty
@@ -46,7 +48,7 @@ until [ "$ARCH" = 'amd64' ] || [ "$ARCH" = 'i686' ] || [ "$ARCH" = 'aarch64' ] |
     [ -z "$input_arch" ] && ARCH='amd64'
 done
 
-# Install dependencies to build palen1x
+# Install dependencies to build MTR
 apt-get update
 apt-get install -y --no-install-recommends wget gawk debootstrap mtools xorriso ca-certificates curl libusb-1.0-0-dev gcc make gzip xz-utils unzip libc6-dev
 
@@ -190,4 +192,4 @@ find . | cpio -oH newc | xz -C crc32 --x86 -vz9eT$(nproc --all) > ../iso/boot/in
 popd
 
 # ISO creation
-grub-mkrescue -o "palen1x-$ARCH.iso" iso --compress=xz
+grub-mkrescue -o "mtr-$ARCH.iso" iso --compress=xz
