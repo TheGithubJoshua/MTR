@@ -26,14 +26,8 @@ jobs:
           ARCH: ${{ matrix.arch }}
         run: |
           sudo -E ./build.sh
-          
       - name: Draft release
         uses: softprops/action-gh-release@v0.1.15
         with:
           draft: true
           files: work/*.iso
-
-
-          dryRun: false
-          localDir: 'work/'
-          remoteDir: '/palera1n/artifacts/palen1x'
