@@ -1,5 +1,4 @@
 #!/bin/bash
-#
 # MTR build script
 # With thanks to the palera1n team.
 
@@ -11,6 +10,7 @@
 GREEN="$(tput setaf 2)"
 BLUE="$(tput setaf 6)"
 NORMAL="$(tput sgr0)"
+ARCH='amd64'
 cat << EOF
 
 Welcome to the MTR build script.
