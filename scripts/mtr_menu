@@ -26,7 +26,6 @@ while true; do
       /bin/bash -i && exit
       ;;
     4)
-      palen1x_logo
       sleep 2
       /sbin/poweroff
       ;;
