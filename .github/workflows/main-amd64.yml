@@ -10,8 +10,6 @@ jobs:
   release:
     strategy:
       fail-fast: false
-      matrix:
-        arch: [ amd64, i686 ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,9 +21,9 @@ jobs:
 
       - name: Build
         env:
-          ARCH: ${{ matrix.arch }}
+          ARCH: 'amd64'
         run: |
-          sudo ./build-auto-amd64.sh
+          sudo -E ./build
       - name: Draft release
         uses: softprops/action-gh-release@v0.1.15
         with:
