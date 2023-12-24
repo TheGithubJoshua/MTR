@@ -11,6 +11,7 @@ GREEN="$(tput setaf 2)"
 BLUE="$(tput setaf 6)"
 NORMAL="$(tput sgr0)"
 ARCH='amd64'
+VERSION='alpha'
 cat << EOF
 
 Welcome to the MTR build script.
