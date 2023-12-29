@@ -15,8 +15,8 @@ VERSION='alpha'
 cat << EOF
 
 Welcome to the MTR build script.
-                                            
-        
+
+
 EOF
 # Ask for the version and architecture if variables are empty
 while [ -z "$VERSION" ]; do
@@ -123,7 +123,7 @@ wget http://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/cfdisk-2.38.1-r8.apk
 apk add --allow-untrusted cfdisk-2.38.1-r8.apk
 apk add lsblk
 apk add nano
-apk add nano
+apk add lynx
 rc-update add bootmisc
 rc-update add hwdrivers
 rc-update add udev
