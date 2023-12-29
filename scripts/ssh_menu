@@ -15,10 +15,11 @@ Your iDevice's default port is 22.
 EOF
 prompt 'User: ' user
 prompt 'Port: ' port
+prompt 'IP: ' ip
 
 clear
 
-blue_echo 'SSHing into your iDevice...'
-ssh -o "ProxyCommand=inetcat $port" -o "UserKnownHostsFile=/dev/null" $user@iPhone || \
-    failed_echo 'Failed to SSH into your iDevice.'
+blue_echo 'SSHing into your Device...'
+ssh -o "ProxyCommand=inetcat $port" -o "UserKnownHostsFile=/dev/null" $user@$ip || \
+    failed_echo 'Failed to SSH into your Device.'
 enter_to_quit
