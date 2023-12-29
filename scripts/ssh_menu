@@ -5,21 +5,19 @@
 ssh_logo
 
 cat << "EOF"
-Connect your iDevice to this computer
+Connect your Device to this computer or plug in an Ethernet cable (If Ethernet dosen't work, go into Termianl and run setup-interfaces)
 
 The keyboard layout is in American Qwerty.
-Your iDevice's default password is alpine.
-Your iDevice's users are `root` and `mobile`.
-Your iDevice's default port is 22.
 
 EOF
 prompt 'User: ' user
 prompt 'Port: ' port
 prompt 'IP: ' ip
+prompt 'Password: ' password
 
 clear
 
 blue_echo 'SSHing into your Device...'
-ssh -o "ProxyCommand=inetcat $port" -o "UserKnownHostsFile=/dev/null" $user@$ip || \
+ssh -o "ProxyCommand=inetcat $port" -o "UserKnownHostsFile=/dev/null"  '$user:$password@$ip' || \
     failed_echo 'Failed to SSH into your Device.'
 enter_to_quit
